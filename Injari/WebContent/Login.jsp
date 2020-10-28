@@ -15,16 +15,21 @@
 </head>
 <body>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="index.html">인자리</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" href="Main.jsp">인자리</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Main.jsp">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="features.html">인자리</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#">USER_NAME</a>
-                        <div class="dropdown-menu"><a class="dropdown-item" href="#">알림(0)</a><a class="dropdown-item" href="mypage.html">마이페이지</a><a class="dropdown-item" href="logout.jsp">로그아웃</a></div>
+                   <%
+                    if(session.getAttribute("sessionID") != null) {
+                    %>
+                    <li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><%=session.getAttribute("name")%>님</a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">알림(0)</a><a class="dropdown-item" href="mypage.html">마이페이지</a><a class="dropdown-item" href="Logout.jsp">로그아웃</a></div>
                     </li>
-                    <li class="nav-item"><a class="nav-link active" href="login.html">로그인</a></li>
+                    <%} else {%>
+					<li class="nav-item"><a class="nav-link" href="Login.jsp">로그인</a></li>
+                    <%} %>
                 </ul>
             </div>
         </div>
