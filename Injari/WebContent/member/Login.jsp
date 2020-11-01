@@ -12,28 +12,14 @@
     <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="assets/css/smoothproducts.css">
+    <script type="text/javascript">
+    
+    function goSignup() {
+		location.href="Signup.do";
+	}
+    </script>
 </head>
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="Main.jsp">인자리</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="Main.jsp">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="features.html">인자리</a></li>
-                   <%
-                    if(session.getAttribute("sessionID") != null) {
-                    %>
-                    <li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><%=session.getAttribute("name")%>님</a>
-                        <div class="dropdown-menu"><a class="dropdown-item" href="#">알림(0)</a><a class="dropdown-item" href="mypage.html">마이페이지</a><a class="dropdown-item" href="Logout.jsp">로그아웃</a></div>
-                    </li>
-                    <%} else {%>
-					<li class="nav-item"><a class="nav-link" href="Login.jsp">로그인</a></li>
-                    <%} %>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <main class="page login-page">
         <section class="clean-block clean-form dark">
             <div class="container">
@@ -41,19 +27,16 @@
                     <h2 class="text-info">로그인</h2>
                     <p>인자리에 오신것을 환영합니다.</p>
                 </div>
-                <form class="form-signin" action="Login_Query.jsp" method="post">
+                <form class="form-signin" action="MemberLoginAction.do" method="post">
                     <div class="form-group"><label for="email">아이디</label><input class="form-control item" type="email" id="email" name="email" required="" autofocus="" placeholder="E-mail"></div>
                     <div class="form-group"><label for="password">비밀번호</label><input class="form-control" type="password" id="pwd" name="pwd" placeholder="비밀번호" required=""></div>
                     <div class="form-group">
                         <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">Remember me</label></div>
-                    </div><button class="btn btn-primary btn-block" type="submit" value="로그인">로그인</button><button class="btn btn-primary btn-block" type="button" value="회원가입" onclick="location.href=&#39;Signup.jsp&#39;">회원가입</button></form>
+                    </div><button class="btn btn-primary btn-block" type="submit" value="로그인">로그인</button>
+                    <input class="btn btn-primary btn-block" type="button" value="회원가입" onclick="goSignup()" value="회원가입"></form>
             </div>
         </section>
     </main>
-    <footer class="page-footer dark">
-        <div class="footer-copyright">
-            <p>© 2020 Capstone Design</p>
-        </div>
     </footer>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

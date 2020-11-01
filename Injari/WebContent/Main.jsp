@@ -14,26 +14,6 @@
     <link rel="stylesheet" href="assets/css/smoothproducts.css">
 </head>
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="Main.jsp">인자리</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link active" href="Main.jsp">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="features.html">인자리</a></li>
-                    <%
-                    if(session.getAttribute("sessionID") != null) {
-                    %>
-                    <li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><%=session.getAttribute("name")%>님</a>
-                        <div class="dropdown-menu"><a class="dropdown-item" href="#">알림(0)</a><a class="dropdown-item" href="mypage.html">마이페이지</a><a class="dropdown-item" href="Logout.jsp">로그아웃</a></div>
-                    </li>
-                    <%} else {%>
-					<li class="nav-item"><a class="nav-link" href="Login.jsp">로그인</a></li>
-                    <%} %>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <main class="page landing-page">
         <section class="clean-block about-us">
             <div class="container">
@@ -96,11 +76,6 @@
                     </div>
                 </div>
             </div>
-            <footer class="page-footer dark">
-                <div class="footer-copyright">
-                    <p>© 2020 Capstone Design</p>
-                </div>
-            </footer>
         </section>
     </main>
     <script src="assets/js/jquery.min.js"></script>

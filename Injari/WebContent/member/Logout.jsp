@@ -9,7 +9,7 @@
 <body>
     <%
         session.invalidate(); // 모든세션정보 삭제
-        response.sendRedirect("Main.jsp");
+        response.sendRedirect("Index.jsp");
     %>
 </body>
 </html>
