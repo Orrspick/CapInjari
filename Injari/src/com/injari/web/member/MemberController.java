@@ -88,6 +88,14 @@ public class MemberController extends HttpServlet {
                 action = new MemberInfoAction();
                 forward = action.execute(req, resp);
             }
+            else if(command.equals("MemberDetailAction.do")) {
+            	action = new MemberDetailAction();
+                forward = action.execute(req, resp);
+            }
+            else if(command.equals("MemberDetailupAction.do")) {
+            	action = new MemberDetailupAction();
+            	forward = action.execute(req, resp);
+            }
 			
 			if(forward != null){
                 if (forward.isRedirect()) {

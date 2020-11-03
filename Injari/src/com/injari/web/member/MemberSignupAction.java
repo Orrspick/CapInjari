@@ -23,8 +23,6 @@ public class MemberSignupAction implements Action {
 		forward.setRedirect(true);
 		forward.setNextPath("Login.do");
 		
-		
-		
 		return forward;
 	}
 
