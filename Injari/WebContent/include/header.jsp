@@ -5,8 +5,6 @@
 	// MemberInfoAction에서 넘긴 회원정보를 추출한다.
 	MemberDTO member = (MemberDTO)request.getAttribute("memberInfo");
     request.setCharacterEncoding("UTF-8");
-    
-    String name = member.getName();
 %>
 <!DOCTYPE html>
 <html>
@@ -63,7 +61,7 @@
                     <%
                     if(session.getAttribute("sessionEmail") != null) {
                     %>
-                    <li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#"> <%=session.getAttribute("sessionEmail") %> 님</a>
+                    <li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#"> <%=member.getName() %> 님</a>
                         <div class="dropdown-menu"><a class="dropdown-item" href="#">알림(0)</a><a class="dropdown-item" href="mypage.html">마이페이지</a><a class="dropdown-item" href="MemberLogoutAction.do">로그아웃</a></div>
                     </li>
                     <%} else {%>

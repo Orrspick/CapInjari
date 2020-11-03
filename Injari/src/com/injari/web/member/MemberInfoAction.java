@@ -18,14 +18,17 @@ public class MemberInfoAction implements Action {
 		MemberDAO dao = MemberDAO.getInstance();
 		MemberDTO member = dao.getUserInfo(id);
 		
-		
 		req.setAttribute("memberInfo", member);
 		
-		forward.setRedirect(true);
-		forward.setNextPath("Index.do");
-		
-		System.out.println(member.getName());
-		
+		if(member.getAuthority() == 1) {
+			forward.setRedirect(false);
+			forward.setNextPath("Index.do");
+		}
+		else if(member.getAuthority() == 0) {
+			forward.setRedirect(false);
+			forward.setNextPath("Index.do");
+		}
+			
 		return forward;
 	}
 

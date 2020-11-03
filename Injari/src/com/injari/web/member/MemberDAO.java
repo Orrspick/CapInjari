@@ -193,4 +193,51 @@ public class MemberDAO {
 			}
 		}
 	}	// end getUserInfo
+	
+	public void InsertDetailMember(DetailMemberDTO detaildto) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+		conn = DBCPConn.getConnection();
+		
+		conn.setAutoCommit(false);
+		
+		StringBuffer sql = new StringBuffer();
+		
+		sql.append("insert into detailuser values");
+		sql.append("(?,?,?,?,?,?,?)");
+		
+		pstmt = conn.prepareStatement(sql.toString());
+		pstmt.setInt(1, detaildto.getUid());
+		pstmt.setString(2, detaildto.getGender());
+		pstmt.setString(3, detaildto.getPhone());
+		pstmt.setString(4, detaildto.getAddress());
+		pstmt.setString(5, detaildto.getMajor());
+		pstmt.setInt(6, detaildto.getCareer());
+		pstmt.setString(7, detaildto.getCareer_year());
+		
+		// 쿼리 실행
+		pstmt.executeUpdate();
+		// 완료시 커밋
+		conn.commit(); 
+					
+				} catch (ClassNotFoundException | NamingException | SQLException sqle) {
+					// 오류시 롤백
+					conn.rollback(); 
+					throw new RuntimeException(sqle.getMessage());
+				} finally {
+					// Connection, PreparedStatement를 닫는다.
+					try{
+						if ( pstmt != null ){ pstmt.close(); pstmt=null; }
+						if ( conn != null ){ conn.close(); conn=null;	}
+					}catch(Exception e){
+						throw new RuntimeException(e.getMessage());
+					}
+				}
+	}
+	
+	public DetailMemberDTO getDetailUser(int uid) {
+		return null;
+	}
 }

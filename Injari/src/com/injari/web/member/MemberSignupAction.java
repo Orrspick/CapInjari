@@ -20,8 +20,6 @@ public class MemberSignupAction implements Action {
 		 
 		dao.insertData(dto);
 		
-		req.setAttribute("scheck", "1");
-		
 		forward.setRedirect(true);
 		forward.setNextPath("Login.do");
 		
