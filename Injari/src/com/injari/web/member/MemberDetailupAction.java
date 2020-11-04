@@ -13,7 +13,22 @@ public class MemberDetailupAction implements Action {
 		
 		MemberDAO dao = MemberDAO.getInstance();
 		DetailMemberDTO ddto = new DetailMemberDTO();
-		return null;
+		MemberDTO dto = (MemberDTO)req.getAttribute("memberInfo");
+		
+		ddto.setUid(dto.getUid());
+		ddto.setGender(req.getParameter("gender"));
+		ddto.setPhone(req.getParameter("phone"));
+		ddto.setAddress(req.getParameter("address"));
+		ddto.setMajor(req.getParameter("major"));
+		ddto.setCareer(Integer.parseInt(req.getParameter("career")));
+		ddto.setCareer_year(req.getParameter("career_year"));
+		
+		dao.InsertDetailMember(ddto);
+		
+		forward.setRedirect(false);
+		forward.setNextPath("Index.do");
+		
+		return forward;
 	}
 
 }

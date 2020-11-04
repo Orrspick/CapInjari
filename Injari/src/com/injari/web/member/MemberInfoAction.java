@@ -20,12 +20,17 @@ public class MemberInfoAction implements Action {
 		
 		req.setAttribute("memberInfo", member);
 		
+		session.setAttribute("uid", member.getUid());
+		session.setAttribute("name", member.getName());
+		session.setAttribute("authority", member.getAuthority());
+		session.setAttribute("mkdate", member.getMkdate());
+		
 		if(member.getAuthority() == 1) {
 			forward.setRedirect(false);
 			forward.setNextPath("Index.do");
 		}
 		else if(member.getAuthority() == 0) {
-			forward.setRedirect(false);
+			forward.setRedirect(true);
 			forward.setNextPath("Index.do");
 		}
 			

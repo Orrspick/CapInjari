@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.naming.NamingException;
+import javax.servlet.http.HttpSession;
 
 import com.injari.web.DBCPConn;
 
@@ -239,5 +240,7 @@ public class MemberDAO {
 	
 	public DetailMemberDTO getDetailUser(int uid) {
 		return null;
-	}
+	} //end InsertDetailMember
+	
+	
 }

@@ -52,7 +52,7 @@
 </head>
 <body>
 <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="Index.jsp">인자리</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" href="Index.do">인자리</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
@@ -61,8 +61,8 @@
                     <%
                     if(session.getAttribute("sessionEmail") != null) {
                     %>
-                    <li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#"> <%=member.getName() %> 님</a>
-                        <div class="dropdown-menu"><a class="dropdown-item" href="#">알림(0)</a><a class="dropdown-item" href="mypage.html">마이페이지</a><a class="dropdown-item" href="MemberLogoutAction.do">로그아웃</a></div>
+                    <li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" aria-expanded="false" href="#"> <%=session.getAttribute("name") %> 님</a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="#">알림(0)</a><a class="dropdown-item" href="Mypage.do">마이페이지</a><a class="dropdown-item" href="MemberLogoutAction.do">로그아웃</a></div>
                     </li>
                     <%} else {%>
 					<li class="nav-item"><a class="nav-link" href="Login.do">로그인</a></li>
