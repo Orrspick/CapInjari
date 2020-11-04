@@ -18,8 +18,14 @@
         <section class="clean-block about-us">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">오늘의 인자리</h2>
+                <%if(session.getAttribute("sessionEmail") != null){
+                	%>
+                	<h2 class="text-info">어서오세요 <%=session.getAttribute("name")%>님</h2>
                     <p>오늘의 인자리는 다음과 같습니다.</p>
+                	<% }else{ %>
+                	<h2 class="text-info">오늘의 인자리</h2>
+                    <p>오늘의 인자리는 다음과 같습니다.</p>
+                    <%} %>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-sm-6 col-lg-4">

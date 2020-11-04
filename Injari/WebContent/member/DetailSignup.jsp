@@ -19,19 +19,18 @@
                         <fieldset><label>성별</label></fieldset>
                         <div>
                             <fieldset>
-                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="customRadioInline1" class="custom-control-input" name="customRadioInline" checked="" value="남성"><label class="custom-control-label" for="customRadioInline1">남성</label></div>
-                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="customRadioInline2" class="custom-control-input" name="customRadioInline" value="여성"><label class="custom-control-label" for="customRadioInline2">여성</label></div>
+                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="gender" class="custom-control-input" name="gender" checked value="남성"><label class="custom-control-label" for="gender">남성</label></div>
+                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="gender" class="custom-control-input" name="gender" value="여성"><label class="custom-control-label" for="gender">여성</label></div>
                             </fieldset>
                         </div>
                     </div>
                     <div class="form-group"><label>전화번호</label><input class="form-control" type="text" id="phone" name="phone"></div>
                     <div class="form-group"><label>주소</label><input class="form-control" type="text" id="address" name="address"></div>
                     <div class="form-group"><label>전공</label><input class="form-control" type="text" id="major" name="major"></div>
-                    <div class="form-group"><label>관심직종</label><input class="form-control" type="text" id="" name=""></div>
                     <div class="form-group"><label>경력</label>
                         <div>
                             <fieldset>
-                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="career" class="custom-control-input" name="Career" checked=""><label class="custom-control-label" for="new">신입</label></div>
+                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="career" class="custom-control-input" name="Career" checked="" value="신입"><label class="custom-control-label" for="career">신입</label></div>
                                 <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="career" class="custom-control-input" name="Career"><label class="custom-control-label" for="career">경력</label></div>
                             </fieldset>
                         </div>
