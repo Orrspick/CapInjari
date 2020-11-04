@@ -239,8 +239,44 @@ public class MemberDAO {
 	}
 	
 	public DetailMemberDTO getDetailUser(int uid) {
-		return null;
-	} //end InsertDetailMember
-	
-	
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		DetailMemberDTO dmember = null;
+
+		try {
+			// 쿼리
+			StringBuffer query = new StringBuffer();
+			query.append("select * from detailuser where uid=?");
+
+			conn = DBCPConn.getConnection();
+			pstmt = conn.prepareStatement(query.toString());
+			pstmt.setInt(1, uid);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) // 회원정보를 DTO에 담는다.
+			{
+				dmember = new DetailMemberDTO();
+				dmember.setGender(rs.getString("gender"));
+				dmember.setPhone(rs.getString("phone"));
+				dmember.setAddress(rs.getString("address"));
+				dmember.setMajor(rs.getString("major"));
+				dmember.setCareer(rs.getInt("career"));
+				dmember.setCareer_year(rs.getString("career_year"));
+			}
+
+			return dmember;
+
+		} catch (Exception sqle) {
+			throw new RuntimeException(sqle.getMessage());
+		} finally {
+			// Connection, PreparedStatement를 닫는다.
+			try{
+				if ( pstmt != null ){ pstmt.close(); pstmt=null; }
+				if ( conn != null ){ conn.close(); conn=null;	}
+			}catch(Exception e){
+				throw new RuntimeException(e.getMessage());
+			}
+		}
+	} //end getDetailUser
 }
