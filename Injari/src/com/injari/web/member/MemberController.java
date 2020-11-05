@@ -68,6 +68,11 @@ public class MemberController extends HttpServlet {
 				forward.setRedirect(false);
 				forward.setNextPath(form+"Mypage.jsp");
 			}
+			else if(command.equals("DetailSignup.do")) {
+				forward=new ActionForward();
+				forward.setRedirect(false);
+				forward.setNextPath(form+"DetailSignup.jsp");
+			}
 			else if(command.equals("MemberLoginAction.do")) // 로그인 처리
             {
                 action = new MemberLoginAction();

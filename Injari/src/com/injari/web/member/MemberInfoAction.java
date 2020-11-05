@@ -18,8 +18,6 @@ public class MemberInfoAction implements Action {
 		MemberDAO dao = MemberDAO.getInstance();
 		MemberDTO member = dao.getUserInfo(id);
 		
-		req.setAttribute("memberInfo", member);
-		
 		session.setAttribute("uid", member.getUid());
 		session.setAttribute("name", member.getName());
 		session.setAttribute("authority", member.getAuthority());

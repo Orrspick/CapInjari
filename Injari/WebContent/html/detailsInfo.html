@@ -40,24 +40,21 @@
                         <fieldset><label>성별</label></fieldset>
                         <div>
                             <fieldset>
-                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="customRadioInline1" class="custom-control-input" name="customRadioInline" checked=""><label class="custom-control-label" for="customRadioInline1">남성</label></div>
-                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="customRadioInline2" class="custom-control-input" name="customRadioInline"><label class="custom-control-label" for="customRadioInline2">여성</label></div>
+                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="gender_man" class="custom-control-input" name="gender" checked="" value="남성"><label class="custom-control-label" for="gender_man">남성</label></div>
+                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="gender_woman" class="custom-control-input" name="gender" value="여성"><label class="custom-control-label" for="gender_woman">여성</label></div>
                             </fieldset>
                         </div>
                     </div>
                     <div class="form-group"><label>전화번호</label><input class="form-control" type="text"></div>
                     <div class="form-group"><label>주소</label><input class="form-control" type="email"></div>
                     <div class="form-group"><label>전공</label><input class="form-control" type="text"></div>
-                    <div class="form-group"><label>관심직종</label><input class="form-control" type="text"></div>
                     <div class="form-group"><label>경력</label>
-                        <div>
+                        <div class="display:inline">
                             <fieldset>
-                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="new" class="custom-control-input" name="Career" checked=""><label class="custom-control-label" for="new">신입</label></div>
-                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="career" class="custom-control-input" name="Career"><label class="custom-control-label" for="career">경력</label></div>
+                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="career_new" class="custom-control-input" name="career" checked="" velue="신입"><label class="custom-control-label" for="career_new">신입</label></div>
+                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="career_old" class="custom-control-input" name="career"><label class="custom-control-label" for="career_old">경력</label></div><select class="form-control" style="width:176px"><option value="1" selected="">1년 이하</option><option value="2">1년 이상</option><option value="3">2년 이상</option><option value="4">3년 이상</option><option value="5">5년 초과</option></select>
+                                <div></div>
                             </fieldset>
-                        </div>
-                        <div class="dropdown"><button class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">선택해주세요</button>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="#">1년 이하</a><a class="dropdown-item" href="#">1년 이상 3년 이하</a><a class="dropdown-item" href="#">3년 이상</a></div>
                         </div>
                     </div>
                     <div class="form-group"><button class="btn btn-primary btn-block" type="submit">확인</button></div>

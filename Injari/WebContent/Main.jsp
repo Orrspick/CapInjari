@@ -89,5 +89,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/smoothproducts.min.js"></script>
     <script src="assets/js/theme.js"></script>
+    <%
+if(session.getAttribute("sessionEmail") != null && session.getAttribute("authority").equals(0)){ %>
+	<script>
+    if (confirm("자세한 정보를 등록하시겠습니까?") == true) {
+    	location.href="DetailSignup.do";
+    } else {
+        
+    }
+</script>
+<%
+}
+%>
 </body>
 </html>

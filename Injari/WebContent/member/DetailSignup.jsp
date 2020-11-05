@@ -3,8 +3,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+function showcareer(){
+	 if($('input:radio[id=select_new]').is(':checked')){
+	        $('select_div').hide();
+	        $('select_career').find('option:first').attr('selected', 'selected');
+	    }else{
+	        $('select_div').show();
+	    }
+}
+</script>
 </head>
 <body>
     <main class="page contact-us-page">
@@ -19,23 +30,22 @@
                         <fieldset><label>성별</label></fieldset>
                         <div>
                             <fieldset>
-                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="gender" class="custom-control-input" name="gender" checked value="남성"><label class="custom-control-label" for="gender">남성</label></div>
-                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="gender" class="custom-control-input" name="gender" value="여성"><label class="custom-control-label" for="gender">여성</label></div>
+                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="gender_man" class="custom-control-input" name="gender" checked="" value="남성"><label class="custom-control-label" for="gender_man">남성</label></div>
+                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="gender_woman" class="custom-control-input" name="gender" value="여성"><label class="custom-control-label" for="gender_woman">여성</label></div>
                             </fieldset>
                         </div>
                     </div>
-                    <div class="form-group"><label>전화번호</label><input class="form-control" type="text" id="phone" name="phone"></div>
-                    <div class="form-group"><label>주소</label><input class="form-control" type="text" id="address" name="address"></div>
-                    <div class="form-group"><label>전공</label><input class="form-control" type="text" id="major" name="major"></div>
+                    <div class="form-group"><label>전화번호</label><input class="form-control" type="text"></div>
+                    <div class="form-group"><label>주소</label><input class="form-control" type="email"></div>
+                    <div class="form-group"><label>전공</label><input class="form-control" type="text"></div>
                     <div class="form-group"><label>경력</label>
-                        <div>
+                        <div class="display:inline">
                             <fieldset>
-                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="career" class="custom-control-input" name="Career" checked="" value="신입"><label class="custom-control-label" for="career">신입</label></div>
-                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="career" class="custom-control-input" name="Career"><label class="custom-control-label" for="career">경력</label></div>
+                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="career_new" class="custom-control-input" name="career" checked value="신입" onchange="showcareer()"><label class="custom-control-label" for="career_new">신입</label></div>
+                                <div class="custom-control custom-radio custom-control-inline"><input type="radio" id="career_old" class="custom-control-input" name="career" value="경력" onchange="showcareer()"><label class="custom-control-label" for="career_old">경력</label></div>
+                                <div id="select_div"><select class="form-control" style="width:176px" id="select_career" name="select_career"><option value="0" selected>선택해주세요</option><option value="1">1년 이하</option><option value="2">1년 이상</option><option value="3">2년 이상</option><option value="4">3년 이상</option><option value="5">5년 초과</option></select></div>
+                                <div></div>
                             </fieldset>
-                        </div>
-                        <div class="dropdown"><button class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">선택해주세요</button>
-                            <div class="dropdown-menu"><a class="dropdown-item" href="#">1년 이하</a><a class="dropdown-item" href="#">1년 이상 3년 이하</a><a class="dropdown-item" href="#">3년 이상</a></div>
                         </div>
                     </div>
                     <div class="form-group"><button class="btn btn-primary btn-block" type="submit">확인</button></div>

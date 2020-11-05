@@ -24,17 +24,6 @@
 <jsp:include page="include/header.jsp"/>
 <div style="margin-top: 40px"><jsp:include page="<%=contentPage%>"/></div> 
 <jsp:include page="include/footer.jsp"/>
-<%
-if(session.getAttribute("sessionEmail") != null && session.getAttribute("authority").equals(0)){ %>
-	<script>
-    if (confirm("자세한 정보를 등록하시겠습니까?") == true) {
-        //확인
-    } else {
-        //취소
-    }
-</script>
-<%
-}
-%>
+
 </body>
 </html>
