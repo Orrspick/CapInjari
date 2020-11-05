@@ -6,8 +6,8 @@ public class DetailMemberDTO {
 	private String phone;
 	private String address;
 	private String major;
-	private int career;
-	private String career_year;
+	private String career;
+	private int career_year;
 	
 	public int getUid() {
 		return uid;
@@ -39,16 +39,16 @@ public class DetailMemberDTO {
 	public void setMajor(String major) {
 		this.major = major;
 	}
-	public int getCareer() {
+	public String getCareer() {
 		return career;
 	}
-	public void setCareer(int career) {
+	public void setCareer(String career) {
 		this.career = career;
 	}
-	public String getCareer_year() {
+	public int getCareer_year() {
 		return career_year;
 	}
-	public void setCareer_year(String career_year) {
+	public void setCareer_year(int career_year) {
 		this.career_year = career_year;
 	}
 	

@@ -215,8 +215,8 @@ public class MemberDAO {
 		pstmt.setString(3, detaildto.getPhone());
 		pstmt.setString(4, detaildto.getAddress());
 		pstmt.setString(5, detaildto.getMajor());
-		pstmt.setInt(6, detaildto.getCareer());
-		pstmt.setString(7, detaildto.getCareer_year());
+		pstmt.setString(6, detaildto.getCareer());
+		pstmt.setInt(7, detaildto.getCareer_year());
 		
 		// 쿼리 실행
 		pstmt.executeUpdate();
@@ -261,8 +261,8 @@ public class MemberDAO {
 				dmember.setPhone(rs.getString("phone"));
 				dmember.setAddress(rs.getString("address"));
 				dmember.setMajor(rs.getString("major"));
-				dmember.setCareer(rs.getInt("career"));
-				dmember.setCareer_year(rs.getString("career_year"));
+				dmember.setCareer(rs.getString("career"));
+				dmember.setCareer_year(rs.getInt("career_year"));
 			}
 
 			return dmember;

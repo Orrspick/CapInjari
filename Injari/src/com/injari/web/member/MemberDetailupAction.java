@@ -20,13 +20,13 @@ public class MemberDetailupAction implements Action {
 		ddto.setPhone(req.getParameter("phone"));
 		ddto.setAddress(req.getParameter("address"));
 		ddto.setMajor(req.getParameter("major"));
-		ddto.setCareer(Integer.parseInt(req.getParameter("career")));
-		ddto.setCareer_year(req.getParameter("career_year"));
+		ddto.setCareer(req.getParameter("career"));
+		ddto.setCareer_year(Integer.parseInt(req.getParameter("career_year")));
 		
 		dao.InsertDetailMember(ddto);
 		
-		forward.setRedirect(false);
-		forward.setNextPath("Index.do");
+		forward.setRedirect(true);
+		forward.setNextPath("MemberDetailAction.do");
 		
 		return forward;
 	}
