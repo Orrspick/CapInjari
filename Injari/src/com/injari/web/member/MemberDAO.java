@@ -205,11 +205,14 @@ public class MemberDAO {
 		conn.setAutoCommit(false);
 		
 		StringBuffer sql = new StringBuffer();
+		StringBuffer sq2 = new StringBuffer();
 		
 		sql.append("insert into detailuser values");
 		sql.append("(?,?,?,?,?,?,?)");
+		sq2.append("Update user set authority=? where uid =?");
 		
 		pstmt = conn.prepareStatement(sql.toString());
+		
 		pstmt.setInt(1, detaildto.getUid());
 		pstmt.setString(2, detaildto.getGender());
 		pstmt.setString(3, detaildto.getPhone());
@@ -220,6 +223,12 @@ public class MemberDAO {
 		
 		// 쿼리 실행
 		pstmt.executeUpdate();
+		
+		pstmt = conn.prepareStatement(sq2.toString());
+		pstmt.setInt(1, 1);
+		pstmt.setInt(2, detaildto.getUid());
+		pstmt.executeUpdate();
+		
 		// 완료시 커밋
 		conn.commit(); 
 					
@@ -243,7 +252,7 @@ public class MemberDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		DetailMemberDTO dmember = null;
-
+		
 		try {
 			// 쿼리
 			StringBuffer query = new StringBuffer();
@@ -264,7 +273,7 @@ public class MemberDAO {
 				dmember.setCareer(rs.getString("career"));
 				dmember.setCareer_year(rs.getInt("career_year"));
 			}
-
+			
 			return dmember;
 
 		} catch (Exception sqle) {

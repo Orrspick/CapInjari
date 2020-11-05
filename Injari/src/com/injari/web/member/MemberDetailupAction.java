@@ -2,6 +2,7 @@ package com.injari.web.member;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class MemberDetailupAction implements Action {
 
@@ -10,12 +11,13 @@ public class MemberDetailupAction implements Action {
 		req.setCharacterEncoding("UTF-8");
 		 
 		ActionForward forward = new ActionForward();
+		HttpSession session = req.getSession();
 		
 		MemberDAO dao = MemberDAO.getInstance();
 		DetailMemberDTO ddto = new DetailMemberDTO();
-		MemberDTO dto = (MemberDTO)req.getAttribute("memberInfo");
+		int uid = (int) session.getAttribute("uid");
 		
-		ddto.setUid(dto.getUid());
+		ddto.setUid(uid);
 		ddto.setGender(req.getParameter("gender"));
 		ddto.setPhone(req.getParameter("phone"));
 		ddto.setAddress(req.getParameter("address"));
@@ -26,7 +28,7 @@ public class MemberDetailupAction implements Action {
 		dao.InsertDetailMember(ddto);
 		
 		forward.setRedirect(true);
-		forward.setNextPath("MemberDetailAction.do");
+		forward.setNextPath("MemberInfoAction.do");
 		
 		return forward;
 	}

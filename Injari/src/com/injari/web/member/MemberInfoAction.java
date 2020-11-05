@@ -25,7 +25,7 @@ public class MemberInfoAction implements Action {
 		
 		if(member.getAuthority() == 1) {
 			forward.setRedirect(false);
-			forward.setNextPath("Index.do");
+			forward.setNextPath("MemberDetailAction.do");
 		}
 		else if(member.getAuthority() == 0) {
 			forward.setRedirect(true);
