@@ -22,7 +22,7 @@
 			}
 			else if(value == "1") // 로그인 버튼 클릭시 로그인 화면으로 이동
 			{
-				location.href="member/Login";
+				location.href="Login.do";
 			}
 			else if(value == "2") // 회원가입 버튼 클릭시 회원가입 화면으로 이동
 			{
