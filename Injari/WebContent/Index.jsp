@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%-- <%
 	request.setCharacterEncoding("UTF-8");
     String contentPage=request.getParameter("contentPage");
     if(contentPage==null)
         contentPage="Main.jsp";
-%>
+%> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,9 +25,22 @@
 <title>인자리 - Injari</title>
 </head>
 <body>
+<div id="header">
 <jsp:include page="include/header.jsp"/>
-<div style="margin-top: 40px"><jsp:include page="<%=contentPage%>"/></div> 
+</div>
+<div style="margin-top: 50px" id="main">
+<c:set var="contentPage" value="${param.contentPage}" />
+<c:choose>
+<c:when test="${contentPage==null}">
+	<jsp:include page="Main.jsp"/>
+</c:when>
+<c:otherwise>
+<jsp:include page="${contentPage}"/>
+</c:otherwise>
+</c:choose>
+</div>
+<div id="footer">
 <jsp:include page="include/footer.jsp"/>
-
+</div>
 </body>
 </html>
