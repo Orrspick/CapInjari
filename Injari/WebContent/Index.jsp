@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%-- <%
-	request.setCharacterEncoding("UTF-8");
-    String contentPage=request.getParameter("contentPage");
-    if(contentPage==null)
-        contentPage="Main.jsp";
-%> --%>
 <!DOCTYPE html>
 <html>
 <head>

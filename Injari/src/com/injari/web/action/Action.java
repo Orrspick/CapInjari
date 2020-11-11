@@ -1,4 +1,4 @@
-package com.injari.web.member;
+package com.injari.web.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

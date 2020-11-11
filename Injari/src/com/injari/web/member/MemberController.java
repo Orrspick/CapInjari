@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.injari.web.action.Action;
+import com.injari.web.action.ActionForward;
+
 //회원관련 컨트롤러
 public class MemberController extends HttpServlet {
 	

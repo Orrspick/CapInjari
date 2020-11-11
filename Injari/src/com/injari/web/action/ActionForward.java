@@ -1,4 +1,4 @@
-package com.injari.web.member;
+package com.injari.web.action;
 
 public class ActionForward {
 	private boolean isRedirect = false;

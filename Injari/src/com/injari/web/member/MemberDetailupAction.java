@@ -4,6 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.injari.web.action.Action;
+import com.injari.web.action.ActionForward;
+
 public class MemberDetailupAction implements Action {
 
 	@Override

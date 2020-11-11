@@ -3,6 +3,9 @@ package com.injari.web.member;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.injari.web.action.Action;
+import com.injari.web.action.ActionForward;
+
 public class MemberLogoutAction implements Action {
 
 	@Override
