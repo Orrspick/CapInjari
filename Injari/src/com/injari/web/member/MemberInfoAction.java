@@ -32,7 +32,7 @@ public class MemberInfoAction implements Action {
 		}
 		else if(member.getAuthority() == 0) {
 			forward.setRedirect(true);
-			forward.setNextPath("Index.do");
+			forward.setNextPath("/Injari");
 		}
 			
 		return forward;

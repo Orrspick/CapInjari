@@ -21,7 +21,7 @@ public class MemberFormChangeAction implements Action {
 		
 		forward.setRedirect(false);
 		
-		if(path.equals("Index.jsp"))
+		if(path.equals("/injari"))
 			forward.setNextPath(path);
 		else
 			forward.setNextPath(form+path);

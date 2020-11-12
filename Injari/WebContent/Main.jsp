@@ -30,7 +30,7 @@
                 int i = 0;
                 for(CompanyDTO dto:slist){
                 %>
-                    <div class="col-sm-6 col-lg-4" style="margin-top: 10px;">
+                    <div class="col-sm-6 col-lg-4" style="margin-top: 9px;">
                         <a href="Company.html">
                             <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
                                 <div class="card-body info">

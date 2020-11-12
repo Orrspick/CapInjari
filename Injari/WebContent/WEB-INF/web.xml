@@ -36,21 +36,21 @@
   <servlet-class>com.injari.web.member.MemberController</servlet-class>
   </servlet>
   
-  <!-- <servlet>
+  <servlet>
   <description>Controller</description>
   <display-name>CompanyController</display-name>
   <servlet-name>CompanyController</servlet-name>
   <servlet-class>com.injari.web.company.CompanyController</servlet-class>
-  </servlet> -->
+  </servlet>
   
   <servlet-mapping>
   <servlet-name>MemberController</servlet-name>
   <url-pattern>*.do</url-pattern>
   </servlet-mapping>
   
-  <!-- <servlet-mapping>
+ <servlet-mapping>
   <servlet-name>CompanyController</servlet-name>
-  <url-pattern>*.cop</url-pattern>
-  </servlet-mapping> -->
+  <url-pattern>/company/*</url-pattern>
+  </servlet-mapping>
   
 </web-app>
