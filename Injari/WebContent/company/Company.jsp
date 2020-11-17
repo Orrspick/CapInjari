@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +13,7 @@
         <section class="clean-block clean-product dark">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">#회사이름</h2>
+                    <h2 class="text-info">${detailinfo.cname }</h2>
                     <p></p>
                 </div>
                 <div class="block-content">
@@ -20,7 +22,7 @@
                             <div class="col-md-6"></div>
                             <div class="col-md-6">
                                 <div class="info">
-                                    <h3>#회사이름</h3>
+                                    <h3>${detailinfo.cname }</h3>
                                     <div class="price"></div><button class="btn btn-primary" type="button">가상면접</button>
                                     <div class="summary">
                                         <p>동영상, 음성 가상면접 이용가능<br><br>전화번호 :&nbsp;</p>
@@ -103,40 +105,6 @@
                                             <div class="rating"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star-empty.svg"></div>
                                             <h4>Incredible product</h4><span class="text-muted"><a href="#">John Smith</a>, 20 Jan 2018</span>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec augue nunc, pretium at augue at, convallis pellentesque ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clean-related-items">
-                        <h3>Related Products</h3>
-                        <div class="items">
-                            <div class="row justify-content-center">
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="clean-related-item">
-                                        <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg"></a></div>
-                                        <div class="related-name"><a href="#">Lorem Ipsum dolor</a>
-                                            <div class="rating"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star-half-empty.svg"><img src="assets/img/star-empty.svg"></div>
-                                            <h4>$300</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="clean-related-item">
-                                        <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg"></a></div>
-                                        <div class="related-name"><a href="#">Lorem Ipsum dolor</a>
-                                            <div class="rating"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star-half-empty.svg"><img src="assets/img/star-empty.svg"></div>
-                                            <h4>$300</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="clean-related-item">
-                                        <div class="image"><a href="#"><img class="img-fluid d-block mx-auto" src="assets/img/tech/image2.jpg"></a></div>
-                                        <div class="related-name"><a href="#">Lorem Ipsum dolor</a>
-                                            <div class="rating"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star.svg"><img src="assets/img/star-half-empty.svg"><img src="assets/img/star-empty.svg"></div>
-                                            <h4>$300</h4>
                                         </div>
                                     </div>
                                 </div>

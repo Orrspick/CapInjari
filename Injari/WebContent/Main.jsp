@@ -31,7 +31,7 @@
                 for(CompanyDTO dto:slist){
                 %>
                     <div class="col-sm-6 col-lg-4" style="margin-top: 9px;">
-                        <a href="Company.html">
+                        <a href="CompanyDetailAction.cop?cid=<%=dto.getCid()%>">
                             <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/avatars/avatar1.jpg">
                                 <div class="card-body info">
                                     <h4 class="card-title"><%=dto.getCname()%></h4>

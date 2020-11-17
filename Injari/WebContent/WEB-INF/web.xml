@@ -50,7 +50,7 @@
   
  <servlet-mapping>
   <servlet-name>CompanyController</servlet-name>
-  <url-pattern>/company/*</url-pattern>
+  <url-pattern>*.cop</url-pattern>
   </servlet-mapping>
   
 </web-app>
