@@ -26,7 +26,7 @@
 <c:set var="contentPage" value="${param.contentPage}" />
 <c:choose>
 <c:when test="${contentPage==null}">
-	<jsp:include page="company/Company.jsp"/>
+	<jsp:include page="Main.jsp"/>
 </c:when>
 <c:otherwise>
 <jsp:include page="${contentPage}"/>

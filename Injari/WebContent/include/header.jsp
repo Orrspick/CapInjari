@@ -41,11 +41,11 @@
 </head>
 <body>
 <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="Index.do">인자리</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" href="/Injari">인자리</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link active" onclick="changeView(0)">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" onclick="/Injari">Home</a></li>
                     <li class="nav-item"><a class="nav-link" onclick="changeView(0)">인자리</a></li>
                     <%
                     if(session.getAttribute("sessionEmail") != null) {

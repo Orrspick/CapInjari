@@ -1,4 +1,4 @@
-package com.injari.web.member;
+package com.injari.web.company;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.injari.web.action.Action;
 import com.injari.web.action.ActionForward;
 
-public class MemberFormChangeAction implements Action {
-	private String form = "Index.jsp?contentPage=member/";
+public class CompanyFormChangeAction implements Action {
+	private String form = "Index.jsp?contentPage=company/";
 	private String path;
 	
 	public void setCommand(String command) {

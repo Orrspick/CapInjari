@@ -29,7 +29,7 @@ public class MemberDetailAction implements Action {
 		session.setAttribute("career_year", dmember.getCareer_year());
 				
 		forward.setRedirect(true);
-		forward.setNextPath("Index.do");
+		forward.setNextPath("/Injari");
 		
 		return forward;
 	}

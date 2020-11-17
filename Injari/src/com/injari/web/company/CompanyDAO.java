@@ -9,6 +9,10 @@ import com.injari.web.DBCPConn;
 
 public class CompanyDAO {
 	
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+	
 	private static CompanyDAO instance;
 	
 	// 싱글톤 패턴
@@ -21,17 +25,15 @@ public class CompanyDAO {
 	
 	public ArrayList<CompanyDTO> getCompany() {
 		int i = 0;
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 		CompanyDTO company = null;
+		ArrayList<CompanyDTO> cslist = new ArrayList<CompanyDTO>();
 		
 		try {
 			// 쿼리
 			StringBuffer query = new StringBuffer();
 			query.append("SELECT cid,cname,shotinfo from company");
 			
-			ArrayList<CompanyDTO> cslist = new ArrayList<CompanyDTO>();
+			
 			conn = DBCPConn.getConnection();
 			pstmt = conn.prepareStatement(query.toString());
 			rs = pstmt.executeQuery();
@@ -50,19 +52,53 @@ public class CompanyDAO {
 				}
 			}
 
-			return cslist;
+			
 
 		} catch (Exception sqle) {
 			throw new RuntimeException(sqle.getMessage());
-		} finally {
-			// Connection, PreparedStatement를 닫는다.
-			try{
-				if ( pstmt != null ){ pstmt.close(); pstmt=null; }
-				if ( conn != null ){ conn.close(); conn=null;	}
-			}catch(Exception e){
-				throw new RuntimeException(e.getMessage());
-			}
-		}
-	}
+		} 
+		close();
+		return cslist;
+	}//end getCompany
 	
+	public CompanyDTO getDetail(int cid) {
+		CompanyDTO company = null;
+		
+		try {
+			conn = DBCPConn.getConnection();
+			
+			StringBuffer sql = new StringBuffer();
+			sql.append("select * from company where cid = ?");
+			
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setInt(1, cid);
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				company = new CompanyDTO();
+				company.setCid(rs.getInt("cid"));
+				company.setCname(rs.getString("cname"));
+				company.setShotinfo(rs.getString("shotinfo"));
+				company.setInfo(rs.getString("info"));
+				company.setInteviewinfo(rs.getString("interviewinfo"));
+				company.setEtcinfo(rs.getString("etcinfo"));
+			}
+			
+		}catch (Exception e) {
+			throw new RuntimeException(e.getMessage());
+		}
+		close();
+		return company;
+	}// end getDetail
+	
+	private void close()
+    {
+        try {
+            if ( pstmt != null ){ pstmt.close(); pstmt=null; }
+            if ( conn != null ){ conn.close(); conn=null;    }
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    } // end close
+
 }

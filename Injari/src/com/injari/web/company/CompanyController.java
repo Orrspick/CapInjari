@@ -52,9 +52,9 @@ public class CompanyController extends HttpServlet {
                  Action actionInstance = (Action)actionClass.newInstance();
                  
                  // 화면전환 Action 인지 확인한다. 화면전환 Action이면 명령어를 전달한다.
-                 if(className.equals("com.injari.web.member.MemberFormChangeAction")){
-                     MemberFormChangeAction mf = (MemberFormChangeAction)actionInstance;
-                     mf.setCommand(command);
+                 if(className.equals("com.injari.web.company.CompanyFormChangeAction")){
+                     CompanyFormChangeAction cf = (CompanyFormChangeAction)actionInstance;
+                     cf.setCommand(command);
                  }
                  
                  // 맵에 명령어와 Action을 담는다.
